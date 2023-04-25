@@ -43,3 +43,5 @@ $gradient-bottom-right: linear-gradient(135deg, #5e2bffff, #ff715bff, #272932ff,
 $gradient-top-left: linear-gradient(225deg, #5e2bffff, #ff715bff, #272932ff, #ecdd7bff, #01a7c2ff);
 $gradient-bottom-left: linear-gradient(315deg, #5e2bffff, #ff715bff, #272932ff, #ecdd7bff, #01a7c2ff);
 $gradient-radial: radial-gradient(#5e2bffff, #ff715bff, #272932ff, #ecdd7bff, #01a7c2ff);
+
+kinsta for hosting?
