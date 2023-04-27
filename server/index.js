@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 //Route to CREATE a new todo
+//To test in POSTMAN: POST http://localhost:5001/todos/ (in the body raw JSON: { "description": "Create a TODO API" } 
 app.post("/todos", async (req, res) => {
   try {
     const { description } = req.body; // Extract the 'description' field from the request body
@@ -76,7 +77,7 @@ app.put("/todos/:id", async (req, res) => {
 });
 
 //Route to DELETE a todo by ID
-//To test in POSTMAN: DELETE http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was updating)
+//To test in POSTMAN: DELETE http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was deleting)
 app.delete("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params; // get the todo id from the request parameters
