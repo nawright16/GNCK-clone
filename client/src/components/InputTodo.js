@@ -39,7 +39,10 @@ const InputTodo = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button className="btn btn-success">Add</button>
+        <button className="btn" style={{ backgroundColor: '#5e2bffff' }}>
+  Add Todo to List
+</button>
+
       </form>
     </Fragment>
   );
