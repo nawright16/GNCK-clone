@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React, { Fragment } from "react"; //groups list of children without adding extra nodes to the DOM
 import './App.css';
 
 function App() {
