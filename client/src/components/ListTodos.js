@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "./EditTodo";
+import Checkbox from "./Checkbox";
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -7,17 +8,17 @@ const ListTodos = () => {
   //delete todo function
   const deleteTodo = async (id) => {
     try {
-        // Send DELETE request to server to delete a specific todo with the given id
-        const deleteTodo = await fetch(`http://localhost:5001/todos/${id}`, {
-            method: "DELETE"
-        });
+      // Send DELETE request to server to delete a specific todo with the given id
+      const deleteTodo = await fetch(`http://localhost:5001/todos/${id}`, {
+        method: "DELETE",
+      });
 
-        // Update the state by removing the deleted todo
-        setTodos(todos.filter(todo => todo.todo_id !== id));
+      // Update the state by removing the deleted todo
+      setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
-        console.error(err.message)
+      console.error(err.message);
     }
-  }
+  };
 
   // Get todos from server
   const getTodos = async () => {
@@ -48,22 +49,20 @@ const ListTodos = () => {
             <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Completed</th>
           </tr>
         </thead>
         <tbody>
-          {/* Placeholder rows */}
-          {/* <tr>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                </tr> */}
-
           {/* Render a row for each todo */}
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
+              <td>
+                <Checkbox todo={todo} />
+              </td>
               <td>{todo.description}</td>
               <td>
-                <EditTodo todo={todo} /></td>
+                <EditTodo todo={todo} />
+              </td>
               <td>
                 {/* Call deleteTodo() when the Delete button is clicked */}
                 <button
@@ -82,4 +81,3 @@ const ListTodos = () => {
 };
 
 export default ListTodos;
-

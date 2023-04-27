@@ -8,6 +8,11 @@ const InputTodo = () => {
   const onSubmitForm = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior, allows the todo list to be updated without the page being reloaded.
 
+    if (description.trim() === "") {
+      // Check if the input field is empty
+      return; // If it is empty, do nothing
+    }
+
     try {
       // Create an object 'body' with the description of the todo item
       const body = { description };
@@ -39,14 +44,12 @@ const InputTodo = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button className="btn" style={{ backgroundColor: '#5e2bffff' }}>
-  Add Todo to List
-</button>
-
+        <button className="btn" style={{ backgroundColor: "#5e2bffff" }}>
+          Add Todo to List
+        </button>
       </form>
     </Fragment>
   );
 };
 
 export default InputTodo;
-

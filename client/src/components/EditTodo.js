@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 
 const EditTodo = ({ todo }) => {
   // Set up state for the description of the todo
-  const [description, setDescription] = useState(todo.description);
+  const [description, setDescription] = useState(todo.description || "");
 
   // Add an event listener to the modal when it is hidden
   useEffect(() => {
