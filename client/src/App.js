@@ -3,8 +3,8 @@ import './App.css';
 
 //components
 
-import InputTodo from "./components/InputTodo";
-import ListTodos from "./components/ListTodos";
+import InputTodo from "./components/InputTodo/InputTodo";
+import ListTodos from "./components/ListTodos/ListTodos";
 
 
 

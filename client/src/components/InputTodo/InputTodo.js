@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from "react";
+import './InputTodo.css'
+
 
 const InputTodo = () => {
   // Declare a state variable 'description' and initialize it to an empty string
@@ -44,7 +46,7 @@ const InputTodo = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button className="btn" style={{ backgroundColor: "#5e2bffff" }}>
+        <button className="btn">
           Add Todo to List
         </button>
       </form>

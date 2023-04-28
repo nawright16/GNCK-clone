@@ -1,0 +1,54 @@
+.table_mt-5_text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 10auto;
+  padding: 10px;
+  text-align: center;
+  color: var(--electric-indigo);
+}
+
+thead {
+  display: flex;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+th {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: 3px;
+}
+
+td {
+  justify-content: center;
+  align-items: center;
+  background-color: var(--moonstone);
+  color: var(--flax);
+  font-weight: bold;
+  border-radius: 5px;
+  width: 50vw;
+  margin: 3px;
+  padding: 5px;
+}
+
+button.btn.btn-warning {
+  background-color: var(--flax);
+}
+
+button.btn.btn-danger {
+  background-color: var(--bittersweet);
+}

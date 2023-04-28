@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
-import EditTodo from "./EditTodo";
-import Checkbox from "./Checkbox";
+import EditTodo from "../EditTodo/EditTodo";
+import Checkbox from "../Checkbox/Checkbox";
+import './ListTodos.css'
+
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -9,7 +11,7 @@ const ListTodos = () => {
   const deleteTodo = async (id) => {
     try {
       // Send DELETE request to server to delete a specific todo with the given id
-      const deleteTodo = await fetch(`http://localhost:5001/todos/${id}`, {
+      await fetch(`http://localhost:5001/todos/${id}`, {
         method: "DELETE",
       });
 
@@ -43,13 +45,14 @@ const ListTodos = () => {
   return (
     <Fragment>
       {" "}
-      <table className="table mt-5 text-center">
+      <table className="table_mt-5_text-center">
         <thead>
           <tr>
+            <th>Completed</th>
             <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
-            <th>Completed</th>
+            
           </tr>
         </thead>
         <tbody>
