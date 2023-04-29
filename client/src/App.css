@@ -1,0 +1,75 @@
+/* whole app styling*/
+body {
+  background-color: #272932ff;
+  color: #5e2bffff;
+  margin: 0;
+  font: 300 25px/1.4 'Helvetica Neue', 'sans-serif';
+  overflow: hidden;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/*list styling*/
+.table_mt-5_text-center {
+  color: #5e2bffff;
+  margin: 10;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+
+}
+
+thead {
+  display: flex;
+  
+}
+
+tr {
+  margin: 5px;
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  text-align: center;
+}
+
+th {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: 3px;
+  
+}
+
+
+td {
+  justify-content: center;
+  align-items: center;
+  color: #ecdd7bff;
+  font-weight: bold;
+  background-color: #01a7c2ff;;
+  border-radius: 5px;
+  width: 50vw;
+  margin: 3px;
+}
+
+
+/* Set background color for warning and danger buttons */
+button.btn.btn-warning {
+  background-color: #ecdd7bff;
+}
+
+button.btn.btn-danger {
+  background-color: #ff715bff;
+}
