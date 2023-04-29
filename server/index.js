@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 //Route to CREATE a new todo
-//To test in POSTMAN: POST http://localhost:5001/todos/ (in the body raw JSON: { "description": "Create a TODO API" } 
+
 // The reason why the route name is "todos" instead of "todo" is that it follows a common RESTful convention of using plural nouns for endpoints that deal with collections or lists of items.
 app.post("/todos", async (req, res) => {
   try {
@@ -35,7 +35,7 @@ app.post("/todos", async (req, res) => {
 });
 
 //Route to get READ all todos
-//To test in POSTMAN: GET http://localhost:5001/todos/ if your table is empty, you will get an empty array
+
 app.get("/todos", async (req, res) => {
   try {
     const allTodos = await pool.query("SELECT * FROM todo"); // Select all rows from the 'todo' table
@@ -46,7 +46,7 @@ app.get("/todos", async (req, res) => {
 });
 
 //Route to get READ a single todo by ID
-//To test in POSTMAN: GET http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was getting)
+
 app.get("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params; // Extract the 'id' parameter from the request URL
