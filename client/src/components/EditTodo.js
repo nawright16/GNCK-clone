@@ -73,22 +73,22 @@ const EditTodo = ({ todo }) => {
               />
             </div>
             <div className="modal-footer">
-              {/* Edit button */}
+              {/* Save button */}
               <button
                 type="button"
                 className="btn btn-warning"
                 data-bs-dismiss="modal"
                 onClick={(e) => updateDescription(e)}
               >
-                Edit
+                Save
               </button>
-              {/* Close button */}
+              {/* Cancel button */}
               <button
                 type="button"
                 className="btn btn-danger"
                 data-bs-dismiss="modal"
               >
-                Close
+                Cancel
               </button>
             </div>
           </div>
