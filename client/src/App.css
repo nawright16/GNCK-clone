@@ -1,7 +1,7 @@
 /* whole app styling*/
 body {
   background-color: #272932ff;
-  color: #5e2bffff;
+  color: #80FFEC;
   margin: 0;
   font: 300 25px/1.4 'Helvetica Neue', 'sans-serif';
   overflow: hidden;
@@ -17,7 +17,7 @@ code {
 
 /*list styling*/
 .table_mt-5_text-center {
-  color: #5e2bffff;
+  color: #80FFEC;
   margin: 10;
   padding: 10px;
   display: flex;
