@@ -1,3 +1,4 @@
+/* whole app styling*/
 body {
   background-color: #272932ff;
   color: #5e2bffff;
@@ -10,6 +11,11 @@ body {
 
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/*list styling*/
 .table_mt-5_text-center {
   color: #5e2bffff;
   margin: 10;
@@ -57,12 +63,6 @@ td {
   width: 50vw;
   margin: 3px;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* Set text color for table cells */
 
 
 /* Set background color for warning and danger buttons */
