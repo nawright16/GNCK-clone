@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "./EditTodo";
-import Checkbox from "./Checkbox";
+import ToggleButton from "./Checkbox";
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -57,8 +57,8 @@ const ListTodos = () => {
           {/* Render a row for each todo */}
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
-              <td className = "checkbox">
-                <Checkbox todo={todo} />
+              <td className = "Checkbox">
+                <ToggleButton todo={todo} />
               </td>
               <td>{todo.description}</td>
               <td>
