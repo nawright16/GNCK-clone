@@ -1,16 +1,15 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
-import './ListTodos.css'
-
+import "./ListTodos.css";
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
 
-  //delete todo function
+  // Function to delete a todo with the given id
   const deleteTodo = async (id) => {
     try {
-      // Send DELETE request to server to delete a specific todo with the given id
+      // Send a DELETE request to the server to delete the todo with the given id
       await fetch(`http://localhost:5001/todos/${id}`, {
         method: "DELETE",
       });
@@ -22,9 +21,10 @@ const ListTodos = () => {
     }
   };
 
-  // Get todos from server
+  // Function to retrieve todos from the server
   const getTodos = async () => {
     try {
+      // Send a GET request to the server to retrieve all todos
       const response = await fetch("http://localhost:5001/todos");
       const jsonData = await response.json();
 
@@ -44,30 +44,38 @@ const ListTodos = () => {
 
   return (
     <Fragment>
-      {" "}
+      {/* Create a table to display the todos */}
       <table className="table_mt-5_text-center">
         <thead>
           <tr>
+            {/* Table headers */}
             <th>Completed</th>
+            <th>Date</th>
             <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
-            
           </tr>
         </thead>
         <tbody>
           {/* Render a row for each todo */}
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
+              {/* Checkbox to mark the todo as completed */}
               <td>
                 <Checkbox todo={todo} />
               </td>
+              {/* Display the due date of the todo */}
+              <td>
+                {new Date(todo.due_date).toLocaleDateString()}
+              </td>
+              {/* Display the description of the todo */}
               <td>{todo.description}</td>
+              {/* Button to edit the todo */}
               <td>
                 <EditTodo todo={todo} />
               </td>
+              {/* Button to delete the todo */}
               <td>
-                {/* Call deleteTodo() when the Delete button is clicked */}
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteTodo(todo.todo_id)}

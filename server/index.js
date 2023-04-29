@@ -16,21 +16,41 @@ app.get("/", (req, res) => {
   res.send("Welcome to our Todo API, where you can procrastinate in style!");
 });
 
-//Route to CREATE a new todo
-//To test in POSTMAN: POST http://localhost:5001/todos/ (in the body raw JSON: { "description": "Create a TODO API" } 
+// Route to CREATE a new todo
+// To test in POSTMAN: POST http://localhost:5001/todos/ (in the body raw JSON: { "description": "Create a TODO API", "due_date": "2023-05-01" })
 // The reason why the route name is "todos" instead of "todo" is that it follows a common RESTful convention of using plural nouns for endpoints that deal with collections or lists of items.
 app.post("/todos", async (req, res) => {
   try {
-    const { description } = req.body; // Extract the 'description' field from the request body
-    const newTodo = await pool.query(
-      "INSERT INTO todo (description) VALUES($1) RETURNING *",
-      [description]
-    ); // Insert a new row into the 'todo' table with the provided description and return the new row
+    const { description, due_date } = req.body;
 
-    res.json(newTodo.rows[0]); // Return the new row in JSON format
-    console.log(req.body); // Log the request body to the console
+    // Check if the todo already exists with the same description and due_date
+    const existingTodo = await pool.query(
+      "SELECT * FROM todo WHERE description = $1 AND due_date = $2",
+      [description, due_date]
+    );
+
+    if (existingTodo.rows.length > 0) {
+      // If the todo already exists, update the existing todo by ID with the new description
+      const { todo_id } = existingTodo.rows[0];
+      const updateTodo = await pool.query(
+        "UPDATE todo SET description = $1 WHERE todo_id = $2",
+        [description, todo_id]
+      );
+
+      console.log("Todo updated:", updateTodo.rows[0]);
+      res.json(updateTodo.rows[0]);
+    } else {
+      // If the todo doesn't exist, insert it into the database
+      const newTodo = await pool.query(
+        "INSERT INTO todo (description, due_date) VALUES($1, $2) RETURNING *",
+        [description, due_date]
+      );
+
+      console.log("New Todo:", newTodo.rows[0]);
+      res.json(newTodo.rows[0]);
+    }
   } catch (err) {
-    console.error(err.message); // If there's an error, log it to the console
+    console.error(err.message);
   }
 });
 
@@ -60,20 +80,46 @@ app.get("/todos/:id", async (req, res) => {
   }
 });
 
-//Route to UPDATE a todo by ID
-//To test in POSTMAN: PUT {"description": "Clean Car"} http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was updating)
+//Route to UPDATE a todo by ID and optionally update its due date
+//To test in POSTMAN: PUT {"description": "Clean Car", "due_date": "2023-05-15"} http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was updating)
 app.put("/todos/:id", async (req, res) => {
   try {
-    const { id } = req.params; // Extract the 'id' parameter from the request URL
-    const { description } = req.body; // Extract the 'description' field from the request body
-    const updateTodo = await pool.query(
-      "UPDATE todo SET description = $1 WHERE todo_id = $2",
-      [description, id]
-    ); // Update the row with the matching ID in the 'todo' table
+    const { id } = req.params;
+    const { description, due_date } = req.body;
 
-    res.json("Todo was updated!"); // Return a success message in JSON format
+    // Check if both description and due_date are provided
+    if (description && due_date) {
+      const updateTodo = await pool.query(
+        "UPDATE todo SET description = $1, due_date = $2 WHERE todo_id = $3",
+        [description, due_date, id]
+      );
+      res.json("Todo was updated!");
+    }
+    // Check if only description is provided
+    else if (description) {
+      const updateTodo = await pool.query(
+        "UPDATE todo SET description = $1 WHERE todo_id = $2",
+        [description, id]
+      );
+      res.json("Todo description was updated!");
+    }
+    // Check if only due_date is provided
+    else if (due_date) {
+      const updateTodo = await pool.query(
+        "UPDATE todo SET due_date = $1 WHERE todo_id = $2",
+        [due_date, id]
+      );
+      res.json("Todo due date was updated!");
+    }
+    // Handle the case where neither description nor due_date is provided
+    else {
+      res
+        .status(400)
+        .json({ error: "Please provide either description or due_date" });
+    }
   } catch (err) {
-    console.error(err.message); // If there's an error, log it to the console
+    console.error(err.message);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
