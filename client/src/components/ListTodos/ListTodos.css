@@ -1,0 +1,32 @@
+.table_mt-5_text-center {
+  margin: auto;
+  width: 80%;
+  /* border-collapse: collapse; */
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+th, td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: var(--moonstone);
+  color: var(--flax);
+}
+
+td {
+  background-color: var(--electric-indigo);
+  color: var(--moonstone);
+}
+
+td button.btn.btn-warning {
+  background-color: var(--flax);
+}
+
+td button.btn.btn-danger {
+  background-color: var(--bittersweet);
+}

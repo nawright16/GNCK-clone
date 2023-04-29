@@ -1,4 +1,13 @@
-/* whole app styling*/
+:root {
+  --aquamarine: #80FFEC;
+  --bittersweet: #ff715bff;
+  --raisin-black: #272932ff;
+  --flax: #ecdd7bff;
+  --moonstone: #01a7c2ff;
+  --white: #ffffff;
+
+}
+
 body {
   background-color: #272932ff;
   color: #80ffec;
