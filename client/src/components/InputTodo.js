@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import Form from 'react-bootstrap/Form';
 
 const InputTodo = () => {
   // Declare a state variable 'description' and initialize it to an empty string
@@ -45,7 +46,7 @@ const InputTodo = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
         <button className="btn" style={{ backgroundColor: "#01a7c2ff" }}>
-          Add Todo to List
+          Add Task
         </button>
       </form>
     </Fragment>
