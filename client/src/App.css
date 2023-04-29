@@ -8,12 +8,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
 }
 
 .table_mt-5_text-center {
   color: #5e2bffff;
-  margin: 10auto;
+  margin: 10;
   padding: 10px;
   display: flex;
   flex-direction: column;
