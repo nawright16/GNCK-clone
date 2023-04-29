@@ -1,5 +1,5 @@
 :root {
-  --electric-indigo: #5e2bffff;
+  --aquamarine: #80FFEC;
   --bittersweet: #ff715bff;
   --raisin-black: #272932ff;
   --flax: #ecdd7bff;
@@ -10,7 +10,7 @@
 
 body {
   background-color: #272932ff;
-  color: #5e2bffff;
+  color:#80FFEC;
   margin: 0;
   font: 300 25px/1.4 'Helvetica Neue', 'sans-serif';
   overflow: hidden;
