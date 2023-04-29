@@ -61,7 +61,7 @@ app.get("/todos/:id", async (req, res) => {
 });
 
 //Route to UPDATE a todo by ID
-//To test in POSTMAN: PUT {"description": "Clean Car"} http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was updating)
+
 app.put("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params; // Extract the 'id' parameter from the request URL
@@ -78,7 +78,6 @@ app.put("/todos/:id", async (req, res) => {
 });
 
 //Route to DELETE a todo by ID
-//To test in POSTMAN: DELETE http://localhost:5001/todos/2 (in this case, 2 was the todo_id number I was deleting)
 app.delete("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params; // get the todo id from the request parameters
