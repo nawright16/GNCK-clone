@@ -5,13 +5,17 @@ import './App.css';
 
 import InputTodo from "./components/InputTodo/InputTodo";
 import ListTodos from "./components/ListTodos/ListTodos";
+import Navbar from "./components/Navbar/Navbar";
+
 
 
 
 
 function App() {
   return (
+    
     <Fragment>
+      <Navbar />
       <div 
         className="container">
           <InputTodo />
