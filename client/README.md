@@ -1,6 +1,7 @@
 # 1. GNCK PERN To Do App
+<div class="force-word-wrap">
     This is the Milestone two project of all stars Casey, Kristen, Nick and Gregg for the NCSU Software Development Bootcamp.  The goal ofthis project was to demonstrate our knowledge and understanding of a fuulstack application from conception to deployment.  It is a culmination of all of our work in the software development course with a specific focus on building from scratch a React front end, an Express back end, connecting to a PostgreSQL database, and running in a Node environment. Our overarching goal was to build an API that relied on RESTful pricipals, keeping our code as DRY as possible, and to make an app that was functional and useful, and that looked good too. This project differed from our last in that it involved a group that allowed us begin to better understand what a real working environment in this field could be like.  We at once had to put aside any apprehension and learn very quickly to cooperate and help each other navigate the ins and outs of collaborative coding.  
-
+</div>
 ## 2. Outline 
     In order to organize our original thoughts, we started our planning with an outline.  It was not 100% complete, and it had some things that would change in the end, but it helped us to get going.
 
@@ -67,7 +68,7 @@
 53. Import React from “react”
 54. Const InputTodo = () => {
 				-Return (
-				-<h1> Input todo</h1>
+				-h1 Input todo h1
 				-)
 			    - }
 55. Export default InputTodo;
@@ -78,7 +79,7 @@
 60. Go back into InputTodo component folder 
 61. Add {Fragment} to React import statement
 62. Put <Fragment> in InputTodo function
-63. Add <h1>To do List</h1 > inside fragment in  function
+63. Add h1 To do List h1  inside fragment in  function
 64. Add className of “text-center and mt5
 65. Under that create a form className=”d-flex mt 5”>
 66. <form>  input type=”text” className=”form-control”
