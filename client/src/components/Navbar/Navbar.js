@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BsFillCaretDownFill } from 'react-icons/bs';
-import { BsFillCaretUpSquareFill } from 'react-icons/bs'
-import './Navbar.css'
-// import Dashboard from "../Dashboard/Dashboard"
-import Modal from "../Modal/Modal";
+import { BsFillCaretUpSquareFill } from 'react-icons/bs';
+import './Navbar.css';
+
+
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -31,8 +31,10 @@ const Navbar = () => {
       <button className="toggle" onClick={() => setNavbarOpen((prev) => !prev)}>
         {navbarOpen ? (<BsFillCaretUpSquareFill style={{ width: '32px', height: '32px' }} />) : (<BsFillCaretDownFill style={{ width: '32px', height: '32px' }} />)}
       </button>
-      <ul className={`menu-nav${navbarOpen ? <Modal /> : ''}`}>
-        <li><Modal /></li>
+      <ul className={`menu-nav${navbarOpen ? ' show-menu': ''}`}>
+        <li>Completed Tasks</li>
+        <li>About GNCK TEAM</li>
+        <li>Another Page</li>
       </ul>
 
     </nav>
