@@ -54,6 +54,34 @@ app.post("/todos", async (req, res) => {
   }
 });
 
+// Route to CREATE a new completed todo
+app.post("/completed_todos", async (req, res) => {
+  try {
+    const { description, due_date } = req.body;
+
+    // Insert the completed todo into the database
+    const newCompletedTodo = await pool.query(
+      "INSERT INTO completed_todo (description, due_date) VALUES ($1, $2) RETURNING *",
+      [description, due_date]
+    );
+
+    console.log("New completed todo:", newCompletedTodo.rows[0]);
+
+    // Delete the corresponding todo from the todo table
+    const { todo_id } = req.body;
+    const deleteTodo = await pool.query(
+      "DELETE FROM todo WHERE todo_id = $1 RETURNING *",
+      [todo_id]
+    );
+
+    console.log("Deleted todo:", deleteTodo.rows[0]);
+
+    res.json(newCompletedTodo.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 //Route to get READ all todos
 //To test in POSTMAN: GET http://localhost:5001/todos/ if your table is empty, you will get an empty array
 app.get("/todos", async (req, res) => {
@@ -77,6 +105,38 @@ app.get("/todos/:id", async (req, res) => {
     res.json(todo.rows[0]); // Return the row in JSON format
   } catch (err) {
     console.error(err.message); // If there's an error, log it to the console
+  }
+});
+
+//Route to get all completed todos
+app.get("/completed_todos", async (req, res) => {
+  try {
+    const allCompletedTodos = await pool.query("SELECT * FROM completed_todo");
+
+    res.json(allCompletedTodos.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+//Route to get completed todos by id
+app.get("/completed_todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const completedTodo = await pool.query(
+      "SELECT * FROM completed_todo WHERE completed_todo_id = $1",
+      [id]
+    );
+
+    if (completedTodo.rows.length === 0) {
+      return res.status(404).json({ message: "Completed todo not found" });
+    }
+
+    res.json(completedTodo.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ message: "Server error" });
   }
 });
 
@@ -135,6 +195,25 @@ app.delete("/todos/:id", async (req, res) => {
     res.json("Todo was deleted!"); // return a success message
   } catch (err) {
     console.log(err.message); // log any errors to the console
+  }
+});
+
+// Route to DELETE a completed todo by ID
+app.delete("/completed_todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Delete the completed todo from the completed_todo table
+    const deletedTodo = await pool.query(
+      "DELETE FROM completed_todo WHERE completed_todo_id = $1 RETURNING *",
+      [id]
+    );
+
+    console.log("Deleted todo:", deletedTodo.rows[0]);
+
+    res.json(deletedTodo.rows[0]);
+  } catch (err) {
+    console.error(err.message);
   }
 });
 

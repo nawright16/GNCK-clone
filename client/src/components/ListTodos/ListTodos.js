@@ -3,7 +3,7 @@ import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
 import "./ListTodos.css";
 
-const ListTodos = () => {
+const ListTodos = ({ onTodoCompleted }) => {
   const [todos, setTodos] = useState([]);
 
   // Function to delete a todo with the given id
@@ -62,12 +62,32 @@ const ListTodos = () => {
             <tr key={todo.todo_id}>
               {/* Checkbox to mark the todo as completed */}
               <td>
-                <Checkbox todo={todo} />
+                <Checkbox
+                  todo={todo}
+                  onChange={(updatedTodo) => {
+                    // Find the index of the updated todo in the todos array
+                    const index = todos.findIndex(
+                      (t) => t.todo_id === updatedTodo.todo_id
+                    );
+
+                    // Create a new copy of the todos array with the updated todo
+                    const newTodos = [...todos];
+                    newTodos[index] = updatedTodo;
+
+                    // Update the todos state with the new copy of the todos array
+                    setTodos(newTodos);
+
+                    // Invoke the callback function to update the completed tasks list in App
+                    if (updatedTodo.completed) {
+                      onTodoCompleted?.(updatedTodo);
+                      setTodos(newTodos.filter((todo) => !todo.completed)); // <-- Remove the completed todo from the todos array
+                    }
+                  }}
+                />
               </td>
+
               {/* Display the due date of the todo */}
-              <td>
-                {new Date(todo.due_date).toLocaleDateString()}
-              </td>
+              <td>{new Date(todo.due_date).toLocaleDateString()}</td>
               {/* Display the description of the todo */}
               <td>{todo.description}</td>
               {/* Button to edit the todo */}
