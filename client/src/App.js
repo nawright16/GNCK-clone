@@ -13,7 +13,6 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    
     <Fragment>
       <Navbar />
       <div 
