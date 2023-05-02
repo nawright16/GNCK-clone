@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './CompletedList.css'
-import { BsFillTrash3Fill } from "react-icons/bs";
+// import { BsFillTrash3Fill } from "react-icons/bs";
 
 const CompletedList = ({ isCompletedTodoUpdated }) => {
   const [completedTasks, setCompletedTasks] = useState([]);
