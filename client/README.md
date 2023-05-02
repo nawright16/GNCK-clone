@@ -2,10 +2,13 @@
 <div class="force-word-wrap">
     This is the Milestone two project of all stars Casey, Kristen, Nick and Gregg for the NCSU Software Development Bootcamp.  The goal ofthis project was to demonstrate our knowledge and understanding of a fuulstack application from conception to deployment.  It is a culmination of all of our work in the software development course with a specific focus on building from scratch a React front end, an Express back end, connecting to a PostgreSQL database, and running in a Node environment. Our overarching goal was to build an API that relied on RESTful pricipals, keeping our code as DRY as possible, and to make an app that was functional and useful, and that looked good too. This project differed from our last in that it involved a group that allowed us begin to better understand what a real working environment in this field could be like.  We at once had to put aside any apprehension and learn very quickly to cooperate and help each other navigate the ins and outs of collaborative coding.  
 </div>
-## 2. Outline 
+
+##  2. Outline 
+<div class="force-word-wrap">
     In order to organize our original thoughts, we started our planning with an outline.  It was not 100% complete, and it had some things that would change in the end, but it helped us to get going.
 
     Here is what our outline looked like:
+</div>
 
 ### Pern to do List outline
 

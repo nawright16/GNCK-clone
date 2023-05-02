@@ -1,9 +1,13 @@
 import React from "react";
+import { MDBSwitch } from 'mdb-react-ui-kit';
+import "./Checkbox.css";
 
 const Checkbox = ({ completed, onChange }) => {
   return (
-    <input
-      type="checkbox"
+
+    <MDBSwitch 
+      id='toggle' 
+      label=''
       checked={completed}
       onChange={onChange}
     />
@@ -11,3 +15,4 @@ const Checkbox = ({ completed, onChange }) => {
 };
 
 export default Checkbox;
+
