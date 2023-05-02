@@ -8,6 +8,7 @@ import './App.css';
 import InputTodo from "./components/InputTodo/InputTodo";
 import ListTodos from "./components/ListTodos/ListTodos";
 import CompletedList from "./components/CompletedList/CompletedList";
+import About from './components/About/About'
 
 function App() {
   const [isCompletedTodoUpdated, setIsCompletedTodoUpdated] = useState(false);
@@ -40,11 +41,11 @@ function App() {
         <div className="display">
           <Routes>
             {/* <Route path="/" element={<ListTodos />} /> */}
-            {/* <Route path="/about" element={<About />} /> */}
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
-
       </Router>
+      
       <body>
         <Fragment>
           <div className="container">
