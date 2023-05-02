@@ -1,4 +1,3 @@
-// import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import "./About.css"
 

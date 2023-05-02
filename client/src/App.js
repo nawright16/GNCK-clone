@@ -40,12 +40,12 @@ function App() {
 
         <div className="display">
           <Routes>
-            {/* <Route path="/" element={<ListTodos />} /> */}
+            
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </Router>
-      
+
       <body>
         <Fragment>
           <div className="container">
