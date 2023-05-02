@@ -2,7 +2,7 @@ import React from "react";
 import { MDBSwitch } from 'mdb-react-ui-kit';
 import "./Checkbox.css";
 
-//Define the Checkbox component with the props 'todo' and 'onChange';
+//Define the Checkbox component with the props 'todo' and 'onChange'
 const Checkbox = ({ todo, onChange }) => {
   const handleOnChange = async () => {
     console.log("Checkbox toggled")

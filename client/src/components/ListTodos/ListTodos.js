@@ -80,7 +80,7 @@ const ListTodos = ({ onTodoCompleted }) => {
                     // Invoke the callback function to update the completed tasks list in App
                     if (updatedTodo.completed) {
                       onTodoCompleted?.(updatedTodo);
-                      setTodos(newTodos.filter((todo) => !todo.completed)); // <-- Remove the completed todo from the todos array
+                      setTodos(newTodos.filter((todo) => !todo.completed)) 
                     }
                   }}
                 />
