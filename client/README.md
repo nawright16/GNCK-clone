@@ -128,8 +128,36 @@
 95. Build button just like the the delete
 
 
+## 3. Usage:
+<div class="force-word-wrap">
+We undertook to build an intuitive app 
+
+</div>
+
+## 4. About the Team
+<div class="force-word-wrap">
+Casey
 
 
+
+Nick
+
+
+
+Kristen
+
+
+
+Gregg
+
+</div>
+
+## 5. 
+
+<div class="force-word-wrap">
+
+
+</div>
 
  
 
