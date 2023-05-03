@@ -3,8 +3,9 @@ import './InputTodo.css'
 
 
 const InputTodo = () => {
-  // Declare a state variable 'description' and initialize it to an empty string
+  // Declare state variables for the description and due date fields
   const [description, setDescription] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   // Define a function to be called when the form is submitted
   const onSubmitForm = async (e) => {
@@ -16,8 +17,8 @@ const InputTodo = () => {
     }
 
     try {
-      // Create an object 'body' with the description of the todo item
-      const body = { description };
+      // Create an object 'body' with the description and due date of the todo item
+      const body = { description, due_date: dueDate };
       console.log("body:", body);
 
       // Send a POST request to the server to create a new todo item
@@ -35,7 +36,7 @@ const InputTodo = () => {
     }
   };
 
-  // Render a form with an input field and a button
+  // Render a form with input fields for the description and due date, and a button
   return (
     <Fragment>
       <h1 className="text-center mt-5">GNCK Todo List</h1>
@@ -46,8 +47,14 @@ const InputTodo = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+        <input
+          type="date"
+          className="form-control"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
         <button className="btn">
-          Add Todo to List
+          Add Task
         </button>
       </form>
     </Fragment>

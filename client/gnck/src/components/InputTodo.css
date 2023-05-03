@@ -1,0 +1,30 @@
+h1.text-center {
+    color: var(--electric-indigo);
+  }
+  
+  form.d-flex {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input.form-control {
+    color: var(--raisin-black);
+    background-color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 5px;
+    width: 30%;
+    height: 5vh;
+    margin-bottom: 10px;
+  }
+  
+  button.btn {
+    color: var(--raisin-black);
+    background-color: var(--moonstone);
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-weight: 20;
+  }
