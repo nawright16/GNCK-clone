@@ -5,12 +5,12 @@
     justify-content: center;
     align-items: center;
     font-size: small;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-family: 'Nunito', sans-serif;
     
 }
 
 h3 {
-   font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 ul {
@@ -25,4 +25,15 @@ li {
     text-decoration-line: line-through;
     justify-content: space-between;
 }
+
+button {
+    color: var(--bittersweet);
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-weight: 20;
+  }
+
 

@@ -1,6 +1,6 @@
 .table_mt-5_text-center {
   margin: auto;
-  width: 80%;
+  width: 70%;
   /* border-collapse: collapse; */
   justify-content: space-between;
   align-items: center;
@@ -8,9 +8,11 @@
 }
 
 th, td {
+  margin-top: 10px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   border: none;
+  font-size: medium;
 }
 
 th {
@@ -19,7 +21,7 @@ th {
 }
 
 td {
-  background-color: var(--electric-indigo);
+  /*background-color: var(--electric-indigo);*/
   color: var(--moonstone);
 }
 
