@@ -1,0 +1,52 @@
+.sidebar-container {
+  width: 10px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--moonstone);
+  overflow-x: hidden;
+  transition: width 0.5s;
+}
+
+.sidebar-container:hover,
+.show-calendar .sidebar-container {
+  width: 1000px;
+}
+
+.sidebar-container button {
+  margin: 10px;
+  padding: 5px;
+}
+
+.calendar-container {
+  display: none;
+}
+
+.show-calendar .calendar-container {
+  display: block;
+}
+
+.calendar-button {
+  color: var(--flax);
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.completed-list {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.github-link {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
