@@ -54,7 +54,7 @@ const InputTodo = () => {
           onChange={(e) => setDueDate(e.target.value)}
         />
         <button className="btn">
-          Add Todo to List
+          Add Task
         </button>
       </form>
     </Fragment>

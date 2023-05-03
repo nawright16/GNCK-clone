@@ -1,4 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { BsFillPencilFill } from 'react-icons/bs';
+import { BsFillHandThumbsUpFill } from 'react-icons/bs';
+import { BsFillHandThumbsDownFill } from 'react-icons/bs';
 
 const EditTodo = ({ todo }) => {
   // Set up state for the description of the todo
@@ -48,7 +51,7 @@ const EditTodo = ({ todo }) => {
         data-bs-toggle="modal"
         data-bs-target={`#id${todo.todo_id}`}
       >
-        Edit
+        <BsFillPencilFill />
       </button>
 
       {/* Modal */}
@@ -80,7 +83,7 @@ const EditTodo = ({ todo }) => {
                 data-bs-dismiss="modal"
                 onClick={(e) => updateDescription(e)}
               >
-                Edit
+                <BsFillHandThumbsUpFill />
               </button>
               {/* Close button */}
               <button
@@ -88,7 +91,7 @@ const EditTodo = ({ todo }) => {
                 className="btn btn-danger"
                 data-bs-dismiss="modal"
               >
-                Close
+                <BsFillHandThumbsDownFill />
               </button>
             </div>
           </div>

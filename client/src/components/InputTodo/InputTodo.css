@@ -14,6 +14,9 @@ h1.text-center {
     border-radius: 5px;
     padding: 15px;
     margin-right: 5px;
+    width: 30%;
+    height: 5vh;
+    margin-bottom: 10px;
   }
   
   button.btn {
@@ -21,6 +24,8 @@ h1.text-center {
     background-color: var(--moonstone);
     border: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-weight: 20;
   }
   
