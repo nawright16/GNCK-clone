@@ -136,19 +136,27 @@ We undertook to build an intuitive app
 
 ## 4. About the Team
 <div class="force-word-wrap">
-Casey
+Casey:
 
 
 
-Nick
+
+
+Nick:
+
+Nick has been working in IT for over 10 years. He is looking forward to making a career transition into software development, focusing on frontend specialties. When he's not learning new code, Nick enjoys playing guitar and chess, as well as working on projects outside.
 
 
 
-Kristen
+Kristen:
+
+Hi there! I am Kristen, a software developer. I am passionate about fitness, reading, and I love to learn about new technologies.
 
 
 
-Gregg
+Gregg: 
+
+Gregg has spent the last many years opening and developing a venerable local eatery/institution, but has now decided to try his hand at a different kind of development.  He likes to debate matters of great import with his adult sons, and is obsessed with electrified stringed instruments.
 
 </div>
 
