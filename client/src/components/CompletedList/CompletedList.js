@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import './CompletedList.css';
+import { BsXCircleFill } from 'react-icons/bs';
+
 
 const CompletedList = ({ isCompletedTodoUpdated }) => {
   const [completedTasks, setCompletedTasks] = useState([]);
@@ -24,14 +27,14 @@ const CompletedList = ({ isCompletedTodoUpdated }) => {
   };
 
   return (
-    <div>
-      <h2>Completed Tasks</h2>
+    <div className="completed">
+      <h3>Completed Tasks</h3>
       <ul>
         {completedTasks.map((task, index) => (
           <li key={index}>
             {task.description}
             <button onClick={() => handleDelete(task.completed_todo_id)}>
-              Delete
+              <BsXCircleFill />
             </button>
           </li>
         ))}

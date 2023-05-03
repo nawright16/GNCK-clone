@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
 import "./ListTodos.css";
+import { BsTrash3Fill } from 'react-icons/bs';
+
 
 const ListTodos = ({ onTodoCompleted }) => {
   const [todos, setTodos] = useState([]);
@@ -80,7 +82,7 @@ const ListTodos = ({ onTodoCompleted }) => {
                     // Invoke the callback function to update the completed tasks list in App
                     if (updatedTodo.completed) {
                       onTodoCompleted?.(updatedTodo);
-                      setTodos(newTodos.filter((todo) => !todo.completed)); // <-- Remove the completed todo from the todos array
+                      setTodos(newTodos.filter((todo) => !todo.completed)) 
                     }
                   }}
                 />
@@ -100,7 +102,7 @@ const ListTodos = ({ onTodoCompleted }) => {
                   className="btn btn-danger"
                   onClick={() => deleteTodo(todo.todo_id)}
                 >
-                  Delete
+                  <BsTrash3Fill />
                 </button>
               </td>
             </tr>
