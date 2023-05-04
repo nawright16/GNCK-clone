@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import EditTodo from "../EditTodo/EditTodo";
 import Checkbox from "../Checkbox/Checkbox";
 import "./ListTodos.css";
+import { BsTrash3Fill } from 'react-icons/bs';
+
 
 const ListTodos = ({ onTodoCompleted }) => {
   const [todos, setTodos] = useState([]);
@@ -100,7 +102,7 @@ const ListTodos = ({ onTodoCompleted }) => {
                   className="btn btn-danger"
                   onClick={() => deleteTodo(todo.todo_id)}
                 >
-                  Delete
+                  <BsTrash3Fill />
                 </button>
               </td>
             </tr>
