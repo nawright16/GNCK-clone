@@ -130,7 +130,7 @@
 
 ## 3. Usage:
 <div class="force-word-wrap">
-We undertook to build an intuitive app 
+We undertook to build an intuitive app that harkens back to the days of a paper to do list.  Add your todos and a due date and watch them populate to the integrated calander. Check off done items and they will be moved to a new list so you can reference your progress.  
 
 </div>
 
@@ -138,8 +138,7 @@ We undertook to build an intuitive app
 <div class="force-word-wrap">
 Casey:
 
-
-
+Hey I'm Casey. I have been a stay at home mom for a few years and now looking for a change of scenery! I enjoy technology and learning new skills as well as creating and fixing projects. I would love to pursue something with the car industry and software. Here's to a new journey!
 
 
 Nick:
@@ -160,10 +159,10 @@ Gregg has spent the last many years opening and developing a venerable local eat
 
 </div>
 
-## 5. 
+## 5. Tech
 
 <div class="force-word-wrap">
-
+The team made use of an Express App running React and a PostgreSQL database to keep track  of everything, all of which is running in a Node environment.  Upon deployment a user should see a seamless app.  
 
 </div>
 
