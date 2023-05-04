@@ -14,18 +14,16 @@ function Header() {
   return (
     <header>
       <Container>
+        <Nav.item>
+          
+        </Nav.item>
         <Nav.Item>
-          <h1>GNCK Todo List</h1>
+          <h1>GNCK List</h1>
         </Nav.Item>
         <Nav defaultActiveKey="/" variant="tabs" className="justify-content-center">
           <Nav.Item>
             <Nav.Link as={Link} to="/">
-              GNCK
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link as={Link} to="/sidebar">
-              Completed Tasks
+              Todo
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
