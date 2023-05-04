@@ -7,6 +7,11 @@
 }
 
 .card-text {
+    text-align: center;
     font-size: 12pt;
     font-family: Verdana;
+}
+
+.github-link {
+    text-align: center;
 }

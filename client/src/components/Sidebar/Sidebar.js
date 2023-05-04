@@ -30,11 +30,6 @@ function Sidebar({ isCompletedTodoUpdated, todos, handleCompletedTodo }) {
             <div className="completed-list">
                 <CompletedList isCompletedTodoUpdated={isCompletedTodoUpdated} />
             </div>
-            <div className="github-link">
-                <a href="https://github.com/Krisvong">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
-            </div>
         </div>
     );
 }

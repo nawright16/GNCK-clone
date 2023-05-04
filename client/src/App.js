@@ -7,10 +7,39 @@ import './App.css';
 //components
 import InputTodo from "./components/InputTodo/InputTodo";
 import ListTodos from "./components/ListTodos/ListTodos";
-import CompletedList from "./components/CompletedList/CompletedList";
 import About from './components/About/About'
+import Sidebar from "./components/Sidebar/Sidebar";
 
-function App() {
+function Header() {
+  return (
+    <header>
+      <Container>
+        <Nav.Item>
+          <h1>GNCK Todo List</h1>
+        </Nav.Item>
+        <Nav defaultActiveKey="/" variant="tabs" className="justify-content-center">
+          <Nav.Item>
+            <Nav.Link as={Link} to="/">
+              GNCK
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/sidebar">
+              Completed Tasks
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/about">
+              About Us
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Container>
+    </header>
+  );
+}
+
+function Display() {
   const [isCompletedTodoUpdated, setIsCompletedTodoUpdated] = useState(false);
 
   const handleCompletedTodo = () => {
@@ -18,44 +47,31 @@ function App() {
   };
 
   return (
+    <div className="display">
+      <Routes>
+        <Route path="/" element={<Fragment>
+          <InputTodo />
+          <ListTodos onTodoCompleted={handleCompletedTodo} />
+          <Sidebar
+            isCompletedTodoUpdated={isCompletedTodoUpdated}
+            handleCompletedTodo={handleCompletedTodo}
+          />
+        </Fragment>} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
+  );
+}
+
+function App() {
+  return (
     <div className="App">
       <Router>
-        <header>
-          <Container>
-            <Nav defaultActiveKey="/" variant="tabs">
-              <Nav.Item>
-                <Nav.Link href="/">
-                  <Link to="/">GNCK</Link>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item >
-                <Nav.Link eventKey={"aboutPage"}>
-                  <Link to="/about">About Us</Link>
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Container>
-
-        </header>
-
-        <div className="display">
-          <Routes>
-            
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
+        <Header />
+        <main>
+          <Display />
+        </main>
       </Router>
-
-      <body>
-        <Fragment>
-          <div className="container">
-            <InputTodo />
-            <ListTodos onTodoCompleted={handleCompletedTodo} />
-            <CompletedList isCompletedTodoUpdated={isCompletedTodoUpdated} />
-          </div>
-        </Fragment>
-      </body>
-
     </div>
   );
 }
