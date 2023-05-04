@@ -19,6 +19,7 @@ const MyCalendar = () => {
         start: new Date(todo.due_date),
         end: new Date(todo.due_date),
       }))
+       console.log('Events:', events); // <-- Log the generated events
     return events
   }
   
@@ -27,6 +28,7 @@ const MyCalendar = () => {
       try {
         const response = await fetch('http://localhost:5001/todos');
         const data = await response.json();
+        console.log('Data fetched:', data);
         setTodos(data);
       } catch (error) {
         console.error(error);
@@ -38,6 +40,7 @@ const MyCalendar = () => {
   
   useEffect(() => {
     setEvents(getEvents(todos.filter((todo) => !todo.completed))) // <-- Filter out completed todos
+    console.log('Events:', events);
   }, [todos])
 
 

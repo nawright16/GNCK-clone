@@ -4,8 +4,6 @@ import "./Sidebar.css";
 import CompletedList from "../CompletedList/CompletedList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
 
 function Sidebar({ isCompletedTodoUpdated, todos, handleCompletedTodo }) {
     const [showCalendar, setShowCalendar] = useState(false);
