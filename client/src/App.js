@@ -27,13 +27,13 @@ function App() {
       <Router>
         <header>
           <Container>
-            <Nav defaultActiveKey="/" variant="tabs">
-              <Nav.Item>
+            <Nav className="justify-content-end" defaultActiveKey="/" variant="tabs">
+              <Nav.Item className="justify-content-end">
                 <Nav.Link href="/">
                   <Link to="/">GNCK</Link>
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item >
+              <Nav.Item className="justify-content-end">
                 <Nav.Link eventKey={"aboutPage"}>
                   <Link to="/about">About Us</Link>
                 </Nav.Link>
@@ -45,25 +45,25 @@ function App() {
 
         <div className="display">
           <Routes>
-            
+
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </Router>
 
       <body>
-    
-    <Fragment>
-      <div className="container">
-        <InputTodo />
-        <ListTodos onTodoCompleted={handleCompletedTodo} />
-        <Sidebar
-          isCompletedTodoUpdated={isCompletedTodoUpdated}
-          handleCompletedTodo={handleCompletedTodo} // Pass the function here
-        />
-      </div>
-    </Fragment>
-    </body>
+
+        <Fragment>
+          <div className="container">
+            <InputTodo />
+            <ListTodos onTodoCompleted={handleCompletedTodo} />
+            <Sidebar
+              isCompletedTodoUpdated={isCompletedTodoUpdated}
+              handleCompletedTodo={handleCompletedTodo} // Pass the function here
+            />
+          </div>
+        </Fragment>
+      </body>
 
     </div>
   );

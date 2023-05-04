@@ -1,5 +1,9 @@
-h1.text-center {
+p.text-center {
     color: var(--electric-indigo);
+    margin-top: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: none;
   }
   
   form.d-flex {
@@ -12,7 +16,7 @@ h1.text-center {
     background-color: var(--white);
     border: none;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px;
     margin-right: 5px;
     width: 30%;
     height: 5vh;

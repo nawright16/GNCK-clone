@@ -11,10 +11,11 @@
 
 }
 
+
 body {
   background-color: #272932ff;
   color:#80FFEC;
-  margin: 0;
+  margin-top: none;
   font: 300 25px/1.4;
   font-family: 'Nunito', sans-serif;
   overflow: hidden;

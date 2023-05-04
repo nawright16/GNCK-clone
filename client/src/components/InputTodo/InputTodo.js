@@ -39,7 +39,7 @@ const InputTodo = () => {
   // Render a form with input fields for the description and due date, and a button
   return (
     <Fragment>
-      <h1 className="text-center mt-5">GNCK Todo List</h1>
+      <p className="text-center">GNCK Todo List</p>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
           type="text"
