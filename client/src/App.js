@@ -5,6 +5,8 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 
 
+
+
 //components
 
 import InputTodo from "./components/InputTodo/InputTodo";
@@ -24,16 +26,17 @@ function App() {
   return (
 
     <div className="App">
+
       <Router>
         <header>
           <Container>
-            <Nav className="justify-content-end" defaultActiveKey="/" variant="tabs">
-              <Nav.Item className="justify-content-end">
+            <Nav className="justify-content-space-between" defaultActiveKey="/" variant="tabs">
+              <Nav.Item >
                 <Nav.Link href="/">
                   <Link to="/">GNCK</Link>
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item className="justify-content-end">
+              <Nav.Item >
                 <Nav.Link eventKey={"aboutPage"}>
                   <Link to="/about">About Us</Link>
                 </Nav.Link>
@@ -61,8 +64,10 @@ function App() {
               isCompletedTodoUpdated={isCompletedTodoUpdated}
               handleCompletedTodo={handleCompletedTodo} // Pass the function here
             />
+
           </div>
         </Fragment>
+      
       </body>
 
     </div>
