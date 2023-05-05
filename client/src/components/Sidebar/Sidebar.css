@@ -1,3 +1,4 @@
+/* Set the width, height, and position of the sidebar */
 .sidebar-container {
   width: 10px;
   height: 100%;
@@ -5,28 +6,46 @@
   top: 0;
   left: 0;
   background-color: var(--moonstone);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Hide the horizontal overflow of the sidebar */
   transition: width 0.5s;
 }
 
+/* When hovering over the sidebar or when the show-calendar class is added to the parent element, set the width of the sidebar to 1000px */
 .sidebar-container:hover,
 .show-calendar .sidebar-container {
   width: 1000px;
 }
 
+/* Style for the buttons inside the sidebar */
 .sidebar-container button {
   margin: 10px;
   padding: 5px;
 }
 
+/* Style for the caret icon used to expand the sidebar */
+.caret-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 4em;
+  color: var(--moonstone);
+  position: fixed;
+  top: 50%;
+  left: -1px;
+}
+
+/* Hide the calendar by default */
 .calendar-container {
   display: none;
 }
 
+/* Show the calendar when the show-calendar class is added to the parent element */
 .show-calendar .calendar-container {
   display: block;
 }
 
+/* Style for the button used to toggle the calendar visibility */
 .calendar-button {
   color: var(--flax);
   margin: 10px;
@@ -34,11 +53,12 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: 30px;
 }
 
+/* Style for the container of completed todos */
 .completed-list {
   margin-top: 60px;
   display: flex;
   justify-content: center;
 }
-
